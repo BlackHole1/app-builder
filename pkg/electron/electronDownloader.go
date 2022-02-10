@@ -100,6 +100,11 @@ func getBaseUrl(config *ElectronDownloadOptions) string {
 			return "https://github.com/electron/electron/releases/download/v"
 		}
 	}
+
+	if (v[len(v)-1:] != "v") {
+		v += "v"
+	}
+
 	return v
 }
 
